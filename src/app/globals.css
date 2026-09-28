@@ -1,0 +1,269 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/* Base Resets & Theme Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent iOS font size inflation on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Locale specific font adjustments */
+html[lang="hi"] body,
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3,
+html[lang="hi"] h4,
+html[lang="hi"] p,
+html[lang="hi"] span,
+html[lang="hi"] a {
+  line-height: 1.45 !important;
+}
+
+html[lang="pa"] body,
+html[lang="pa"] h1,
+html[lang="pa"] h2,
+html[lang="pa"] h3,
+html[lang="pa"] h4,
+html[lang="pa"] p,
+html[lang="pa"] span,
+html[lang="pa"] a {
+  line-height: 1.45 !important;
+}
+
+/* Heading Highlight Pill (Legalyax style) */
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-pill);
+  padding: 0.1em 0.55em;
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  vertical-align: middle;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+html[lang="en"] .highlight-pill {
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+html[lang="hi"] .highlight-pill,
+html[lang="pa"] .highlight-pill {
+  font-style: normal;
+}
+
+/* Primary Bronze CTA Button with small circular arrow */
+.btn-bronze {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent-bronze);
+  color: #FFFFFF;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-bronze);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-bronze:hover {
+  background-color: var(--accent-bronze-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(138, 106, 59, 0.32);
+}
+
+.btn-bronze:active {
+  transform: translateY(0);
+}
+
+.btn-bronze .arrow-icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.22);
+  transition: transform 0.25s ease;
+}
+
+.btn-bronze:hover .arrow-icon-circle {
+  transform: translate(2px, -2px);
+}
+
+/* Secondary Pill Nav / Link */
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-body);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-pill:hover,
+.nav-pill.active {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+/* Concave Notch Shape for Stats Strip & Portrait Showcase */
+.portrait-notch-container {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* Circular Scale Ring Badge */
+.bronze-scale-badge {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 60%, #F5F3ED 100%);
+  border: 6px solid var(--accent-gold-ring);
+  box-shadow: 0 10px 25px rgba(138, 106, 59, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+/* Ghost Watermark Text */
+.ghost-watermark {
+  user-select: none;
+  pointer-events: none;
+  font-weight: 900;
+  color: rgba(14, 14, 16, 0.035);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 0.85;
+}
+
+/* Laurel Badge */
+.laurel-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.laurel-badge:hover {
+  color: var(--text-primary);
+}
+
+/* Glass Floating Pills on Portrait */
+.glass-portrait-pill {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .glass-portrait-pill {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.8125rem;
+  }
+}
+
+.glass-portrait-pill.active {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #0E0E10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: scale(1.04);
+}
+
+.glass-portrait-pill.inactive {
+  background-color: rgba(20, 20, 24, 0.55);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-portrait-pill.inactive:hover {
+  background-color: rgba(30, 30, 36, 0.75);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 14, 16, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 14, 16, 0.28);
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile safe area insets (notch / home indicator) */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}

@@ -1,0 +1,43 @@
+:root {
+  /* Surface & Backgrounds */
+  --bg-primary: #EEF0F2;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F8F9FA;
+  --bg-pill: #E2E5E8;
+  --bg-pill-hover: #D6DADC;
+  --bg-glass: rgba(238, 240, 242, 0.82);
+  --bg-dark-glass: rgba(14, 14, 16, 0.72);
+  --bg-dark-card: #18191B;
+
+  /* Typography Colors */
+  --text-primary: #0E0E10;
+  --text-body: #33373D;
+  --text-muted: #646A73;
+  --text-subtle: #8E959E;
+  --text-on-dark: #F3F4F6;
+
+  /* Accent Bronze Palette */
+  --accent-bronze: #8A6A3B;
+  --accent-bronze-hover: #72552D;
+  --accent-bronze-light: #C4A576;
+  --accent-bronze-subtle: rgba(138, 106, 59, 0.12);
+  --accent-bronze-border: rgba(138, 106, 59, 0.28);
+  --accent-gold-ring: #9D7B48;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(14, 14, 16, 0.08);
+  --border-medium: rgba(14, 14, 16, 0.15);
+  --border-dark-subtle: rgba(255, 255, 255, 0.12);
+
+  /* Geometry */
+  --radius-pill: 9999px;
+  --radius-card: 28px;
+  --radius-modal: 24px;
+  --radius-inner: 16px;
+
+  /* Elevations */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --shadow-float: 0 16px 40px rgba(0, 0, 0, 0.08);
+  --shadow-bronze: 0 8px 24px rgba(138, 106, 59, 0.22);
+}
